@@ -1,0 +1,223 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background-size: cover;
+    background-image: url(img/purebackground.png);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    width:550px;
+    height:550px;
+    background-color: rgb(224,120,140);
+    border-radius: 50%;
+    border:15px solid rgb(224,120,140);
+    position: absolute;
+    overflow: hidden;
+    transition: 5s;
+}
+
+.container div{
+    height: 50%;
+    width: 250px;
+    position: absolute;
+    transform: translateX(-50%);
+    transform-origin:bottom;
+    text-align:center;
+    display:flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Pacifico;
+    color:rgb(0, 0, 0);
+    
+}
+
+.element {
+    position: absolute;
+    object-position: top;
+    display:flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 1300px;
+    top: 28px;
+    z-index: 10;
+}
+
+.jackpot {
+    position: absolute;
+    display: none;
+    z-index: 9;
+}
+
+.container .one{
+    clip-path: polygon(100% 0 , 50% 100% , 0 0);
+    background-color: rgb(198,231,236   );
+    left: 50%;
+}
+
+.container .two{
+    clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+    background-color: rgb(173,130,183);
+    transform: rotate(45deg);
+    left:135px;
+}
+
+.container .three{
+    clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+    background-color: rgb(236,197,200);
+    transform: rotate(90deg);
+    left:135px;
+}
+
+.container .four{
+    clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+    background-color: rgb(173,130,183);
+    transform: rotate(135deg);
+    left:135px;
+}
+
+.container .five{
+    clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+    background-color: rgb(245,175,106);
+    transform: rotate(180deg);
+    left:135px;
+}
+
+.container .six{
+    clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+    background-color: rgb(173,130,183);
+    transform: rotate(225deg);
+    left:135px;
+}
+
+.container .seven{
+    clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+    background-color: rgb(236,197,200);
+    transform: rotate(270deg);
+    left:135px;
+}
+
+.container .eight{
+    clip-path: polygon(100% 0 , 50% 100% , 0 0 );
+    background-color: rgb(173,130,183);
+    transform: rotate(315deg);
+    left:135px;
+}
+
+.container .oneone{
+    clip-path: polygon(55% 0 , 50% 100% , 45% 0 );
+    background-color: rgb(246,239,231);
+    transform: rotate(16.5deg);
+    left:135px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+
+.container .onetwo{
+    clip-path: polygon(55% 0 , 50% 100% , 45% 0 );
+    background-color: rgb(246,239,231);
+    transform: rotate(343.5deg);
+    left:135px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.arrow{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color:rgb(0, 0, 0);
+    z-index: 8;
+    display: none;
+}
+
+.arrow::before{
+    content:"\25BC";
+    font-size: 100px;
+}
+
+
+
+#spin{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index:3;
+    background-color: #ccc;
+    text-transform: uppercase;
+    border: 8px solid #fff;
+    font-weight: bold;
+    font-size: 20px;
+    color: #a2a2a2;
+    width: 80px;
+    height: 80px;
+    font-family: sans-serif;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+.popup .overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    z-index:4;
+    display:none;
+}
+
+.popup .content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:#fff;
+    border-radius: 10px;
+    width:350px;
+    height:280px;
+    z-index:4;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.popup .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:30px;
+    height:30px;
+    background:#222;
+    color:#fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.popup.active .overlay{
+    display:block;
+}
+
+.popup.active .content{
+    transition: all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
+}
